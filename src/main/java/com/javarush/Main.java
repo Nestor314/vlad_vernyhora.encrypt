@@ -2,16 +2,13 @@ package com.javarush;
 
 import com.javarush.input.ApplicationInput;
 import com.javarush.input.ConsoleInput;
-import com.javarush.input.InputVariables;
-import com.javarush.input.Splitter;
-
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class Main {
     public static void main(String[] args) {
 
         Characters.initializeWholeList();
+
+        //MainFrame frame = new MainFrame();
 
         if (args.length != 0) {
 
