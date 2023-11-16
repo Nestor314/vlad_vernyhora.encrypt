@@ -1,16 +1,26 @@
 package com.javarush;
 
+import com.javarush.input.ConsoleInput;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Main {
     public static void main(String[] args) {
 
-        checkCommand(args);
-        checkFilePath(args);
-        checkKey(args);
-
         Characters.initializeWholeList();
+
+        if (!(args.length == 0)) {
+
+            checkCommand(args);
+            checkFilePath(args);
+            checkKey(args);
+
+        } else {
+
+            ConsoleInput.input();
+
+        }
 
     }
 
