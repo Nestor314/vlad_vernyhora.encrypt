@@ -2,45 +2,31 @@ package com.javarush.input;
 
 public class Splitter {
 
-    private static String command;
+    private static String[] inputArray = ConsoleInput.getConsoleInput().split("\\s+");
 
-    public static String getCommand() {
-        return command;
+    public static String[] getInputArray() {
+        return inputArray;
     }
 
-    public static void setCommand(String command) {
-        Splitter.command = command;
+    public void setInputArray(String[] inputArray) {
+        this.inputArray = inputArray;
     }
 
-    private static String filePath;
+    public static void split() {
 
-    public static String getFilePath() {
-        return filePath;
+        InputVariables.setCommand(getInputArray()[0]);
+        InputVariables.setFilePath(getInputArray()[1]);
+        setKey(getInputArray()[2]);
     }
+    public static void setKey(String key){
 
-    public static void setFilePath(String filePath) {
-        Splitter.filePath = filePath;
-    }
+        try { //Якщо користувач введе не число як key
+            InputVariables.setKey(Integer.parseInt(key)); //Тому що масив String[], а нам потрібен int
+        } catch (NumberFormatException e) {
 
-    private static int key;
+            throw new IllegalArgumentException("Invalid key \"" + key + "\". It has to be integer");
 
-    public static int getKey() {
-        return key;
-    }
-
-    public static void setKey(int key) {
-        Splitter.key = key;
-    }
-
-    public static void splitter() {
-
-        String[] inputArray = ConsoleInput.getConsoleInput().split("\\s+");
-
-        setCommand(inputArray[0]);
-        setFilePath(inputArray[1]);
-        setKey(Integer.parseInt(inputArray[2])); //Тому що масив String[]
-
-        //System.out.println(getCommand() + " " + getFilePath() + " " + getKey());
+        }
 
     }
 

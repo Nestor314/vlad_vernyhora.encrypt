@@ -1,8 +1,10 @@
 package com.javarush.input;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class ConsoleInput {
+public class ConsoleInput extends Input {
 
     static Scanner reader = new Scanner(System.in);
 
@@ -24,9 +26,10 @@ public class ConsoleInput {
 
         setConsoleInput(reader.nextLine());
 
-        Splitter.splitter();
+        Splitter.split();
+
+        checkVariables();
 
     }
-
 
 }
