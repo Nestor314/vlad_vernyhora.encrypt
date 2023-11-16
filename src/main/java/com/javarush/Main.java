@@ -10,9 +10,11 @@ public class Main {
         checkFilePath(args);
         checkKey(args);
 
+        Characters.initializeWholeList();
+
     }
 
-    public static void checkCommand(String[] args) { //Перевіряємо чи обрана одна з 3х існуючих команд
+    private static void checkCommand(String[] args) { //Перевіряємо чи обрана одна з 3х існуючих команд
 
         if (!(args[0].equalsIgnoreCase("encrypt")) &&
                 !(args[0].equalsIgnoreCase("decrypt")) &&
@@ -23,7 +25,7 @@ public class Main {
         }
     }
 
-    public static void checkFilePath(String[] args) { //Перевіряємо чи дійсний шлях до файлу
+    private static void checkFilePath(String[] args) { //Перевіряємо чи дійсний шлях до файлу
 
         if (!Files.exists(Paths.get(args[1])) || !Files.isRegularFile(Paths.get(args[1]))) {
 
@@ -33,7 +35,7 @@ public class Main {
 
     }
 
-    public static void checkKey(String[] args) { //Перевіряємо чи підходить нам ключ
+    private static void checkKey(String[] args) { //Перевіряємо чи підходить нам ключ
 
         try {
 
