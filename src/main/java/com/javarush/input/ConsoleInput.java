@@ -2,7 +2,7 @@ package com.javarush.input;
 
 import java.util.Scanner;
 
-public class ConsoleInput extends Input {
+public class ConsoleInput extends InputCheck {
 
     static Scanner reader = new Scanner(System.in);
 

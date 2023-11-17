@@ -2,7 +2,7 @@ package com.javarush.input;
 
 import com.javarush.CaesarCipher;
 
-public class ApplicationInput extends Input {
+public class ApplicationInput extends InputCheck {
 
     public static void input(String[] args) {
 
@@ -16,7 +16,7 @@ public class ApplicationInput extends Input {
 
     }
 
-    public static void setKey(String key) {
+    private static void setKey(String key) {
 
         try { //Якщо користувач введе не число як key
             InputVariables.setKey(Integer.parseInt(key));

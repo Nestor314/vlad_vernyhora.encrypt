@@ -3,7 +3,7 @@ package com.javarush.input;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-abstract class Input {
+public abstract class InputCheck {
 
     public static void checkVariables() {
 

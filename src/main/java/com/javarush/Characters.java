@@ -19,7 +19,7 @@ public class Characters {
 
     }
 
-    public static void initializeEngCharacters() {
+    private static void initializeEngCharacters() {
 
         for (char engBig = 'A'; engBig <= 'Z'; engBig++) { //от 0 до 25
             characterList.add(engBig);
@@ -31,7 +31,7 @@ public class Characters {
 
     }
 
-    public static void initializeRusUkrCharacters() {
+    private static void initializeRusUkrCharacters() {
 
         for (char rusBig = 'А'; rusBig <= 'Я'; rusBig++) { //от 52 до 77
             characterList.add(rusBig);
@@ -51,7 +51,7 @@ public class Characters {
 
     }
 
-    public static void initializePunctuationCharacters() {
+    private static void initializePunctuationCharacters() {
 
         String stringPunctuation = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
         for (char punctuation : stringPunctuation.toCharArray()) {

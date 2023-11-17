@@ -8,18 +8,15 @@ public class Splitter {
         return inputArray;
     }
 
-    public void setInputArray(String[] inputArray) {
-        this.inputArray = inputArray;
-    }
-
     public static void split() {
 
         InputVariables.setCommand(getInputArray()[0]);
         InputVariables.setFilePath(getInputArray()[1]);
         setKey(getInputArray()[2]);
+
     }
 
-    public static void setKey(String key) {
+    private static void setKey(String key) {
 
         try { //Якщо користувач введе не число як key
             InputVariables.setKey(Integer.parseInt(key)); //Тому що масив String[], а нам потрібен int

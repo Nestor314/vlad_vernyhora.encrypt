@@ -8,7 +8,7 @@ public class CaesarCipher {
     private static int bestMatchCount = 0;
 
 
-    public static String encrypt(String text, int key) {
+    private static String encrypt(String text, int key) {
         StringBuilder encryptedText = new StringBuilder();
 
         for (char character : text.toCharArray()) {
@@ -28,11 +28,11 @@ public class CaesarCipher {
 
     }
 
-    public static String decrypt(String text, int key) {
+    private static String decrypt(String text, int key) {
         return encrypt(text, Characters.characterList.size() - key);
     }
 
-    public static void bruteForce(String encryptedText) {
+    private static void bruteForce(String encryptedText) {
 
         String[] wordsToMatch = {
                 //Додано англійські слова
@@ -57,14 +57,14 @@ public class CaesarCipher {
 
     }
 
-    public static int countMatches(String text, String[] wordsToMatch) {
-        int count = 0;
+    private static int countMatches(String text, String[] wordsToMatch) {
+        int counter = 0;
         for (String word : wordsToMatch) {
             if (text.toLowerCase().contains(word)) {
-                count++;
+                counter++;
             }
         }
-        return count;
+        return counter;
     }
 
     public static void commands() {
@@ -74,20 +74,24 @@ public class CaesarCipher {
         FileReaderWriter.useDecryptedFileName();
 
         if ("encrypt".equalsIgnoreCase(InputVariables.getCommand())) {
+
             String encryptedText = CaesarCipher.encrypt(FileReaderWriter.getInputText(), InputVariables.getKey());
             FileReaderWriter.writeTextToFile(FileReaderWriter.getEncryptedFileName(), encryptedText); // Запис зашифрованого тексту у файл
 
         } else if ("decrypt".equalsIgnoreCase(InputVariables.getCommand())) {
+
             String decryptedText = CaesarCipher.decrypt(FileReaderWriter.getInputText(), InputVariables.getKey());
             FileReaderWriter.writeTextToFile(FileReaderWriter.getDecryptedFileName(), decryptedText); // Запис розшифрованого тексту у файл
-            
+
         } else if ("brute-force".equalsIgnoreCase(InputVariables.getCommand())) {
+
             String encryptedText = FileReaderWriter.readTextFromFile(InputVariables.getFilePath());
             bruteForce(encryptedText);
 
             System.out.println("Key - " + bestKey);
             String decryptedText = decrypt(encryptedText, bestKey);
             FileReaderWriter.writeTextToFile(FileReaderWriter.getDecryptedFileName(), decryptedText);
+
         }
 
     }

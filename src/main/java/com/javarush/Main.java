@@ -4,7 +4,6 @@ import com.javarush.input.ApplicationInput;
 import com.javarush.input.ConsoleInput;
 
 import java.util.Scanner;
-import java.util.logging.FileHandler;
 
 public class Main {
 
@@ -29,8 +28,7 @@ public class Main {
 
     }
 
-    public static void guiOrConsole() {
-
+    private static void guiOrConsole() {
 
         System.out.println("Choose how you want to use encrypter (enter number):" +
                 "\n1 - GUI" +
@@ -40,6 +38,8 @@ public class Main {
 
         if (wayOfUsing == 1) {
 
+            MainFrame mainFrame = new MainFrame();
+            //InputFrame inputFrame = new InputFrame();
 
         } else if (wayOfUsing == 2) {
 
@@ -50,7 +50,7 @@ public class Main {
 
     }
 
-    public static void checkWayOfUsing() {
+    private static void checkWayOfUsing() {
 
         try {
             wayOfUsing = input.nextInt();
