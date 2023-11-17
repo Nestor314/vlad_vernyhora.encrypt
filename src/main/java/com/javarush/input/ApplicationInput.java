@@ -1,5 +1,7 @@
 package com.javarush.input;
 
+import com.javarush.CaesarCipher;
+
 public class ApplicationInput extends Input {
 
     public static void input(String[] args) {
@@ -9,6 +11,8 @@ public class ApplicationInput extends Input {
         setKey(args[2]);
 
         checkVariables();
+
+        CaesarCipher.commands();
 
     }
 

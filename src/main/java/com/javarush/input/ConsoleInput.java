@@ -16,7 +16,6 @@ public class ConsoleInput extends Input {
         ConsoleInput.consoleInput = consoleInput;
     }
 
-
     public static void input() {
 
         System.out.println("Enter command, file path and key." +
@@ -26,7 +25,7 @@ public class ConsoleInput extends Input {
 
         Splitter.split();
 
-        checkVariables(); //Методу класу Input
+        checkVariables(); //Метод класу Input
 
     }
 

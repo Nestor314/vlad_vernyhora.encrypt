@@ -36,13 +36,7 @@ public class Main {
                 "\n1 - GUI" +
                 "\n2 - Console");
 
-        try {
-            wayOfUsing = input.nextInt();
-        } catch (NumberFormatException e) {
-
-            throw new IllegalArgumentException("Invalid way of using \"" + wayOfUsing + "\". It has to be 1 or 2");
-
-        }
+        checkWayOfUsing();
 
         if (wayOfUsing == 1) {
 
@@ -51,6 +45,18 @@ public class Main {
 
             ConsoleInput.input();
             CaesarCipher.commands();
+
+        }
+
+    }
+
+    public static void checkWayOfUsing() {
+
+        try {
+            wayOfUsing = input.nextInt();
+        } catch (NumberFormatException e) {
+
+            throw new IllegalArgumentException("Invalid way of using \"" + wayOfUsing + "\". It has to be 1 or 2");
 
         }
 
