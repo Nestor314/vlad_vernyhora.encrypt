@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainFrame extends JFrame{ //Головне меню
+public class MainFrame extends JFrame { //Головне меню
 
     static JButton encrypt;
     static JButton decrypt;
@@ -13,7 +13,7 @@ public class MainFrame extends JFrame{ //Головне меню
     static JButton help;
     static JButton exit;
 
-    public MainFrame(){
+    public MainFrame() {
 
         //Параметри вікна
         setSize(600, 429);
@@ -27,7 +27,7 @@ public class MainFrame extends JFrame{ //Головне меню
         headPanel.setBackground(Color.GRAY);
 
         JLabel menu = new JLabel("Main Menu");
-        menu.setBounds(215,25,200,50);
+        menu.setBounds(215, 25, 200, 50);
         menu.setFont(new Font("Calibri", Font.BOLD, 30));
         headPanel.add(menu);
 
@@ -76,7 +76,7 @@ public class MainFrame extends JFrame{ //Головне меню
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            if (e.getSource() == exit){
+            if (e.getSource() == exit) {
 
                 System.exit(0);
 

@@ -18,7 +18,8 @@ public class Splitter {
         InputVariables.setFilePath(getInputArray()[1]);
         setKey(getInputArray()[2]);
     }
-    public static void setKey(String key){
+
+    public static void setKey(String key) {
 
         try { //Якщо користувач введе не число як key
             InputVariables.setKey(Integer.parseInt(key)); //Тому що масив String[], а нам потрібен int

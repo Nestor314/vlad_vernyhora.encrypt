@@ -26,7 +26,7 @@ public class ConsoleInput extends Input {
 
         Splitter.split();
 
-        checkVariables();
+        checkVariables(); //Методу класу Input
 
     }
 
